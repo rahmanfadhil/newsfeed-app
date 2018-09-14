@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import queryString from "query-string";
 import { WebView } from "react-native";
-import {
-  Container,
-  Header,
-  Body,
-  Left,
-  Button,
-  Icon,
-  Text,
-  Content
-} from "native-base";
+import { Container, Header, Body, Left, Button, Icon } from "native-base";
 
 class ArticleDetail extends Component {
   render() {
