@@ -16,6 +16,7 @@ import {
 import store from "./store";
 import HomePage from "./pages/HomePage";
 import SourceDetail from "./pages/SourceDetail";
+import ArticleDetail from "./pages/ArticleDetail";
 
 export default class App extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class App extends Component {
           <Fragment>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/source/:id" component={SourceDetail} />
+            <Route exact path="/article" component={ArticleDetail} />
           </Fragment>
         </Provider>
       </NativeRouter>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Image, FlatList } from "react-native";
+import { withRouter } from "react-router-native";
+import { Image, FlatList, TouchableOpacity } from "react-native";
 import {
   Text,
   Container,
@@ -42,26 +43,30 @@ class SourceDetail extends Component {
       Number.parseInt(this.props.match.params.id)
     ];
     return (
-      <Card>
-        <CardItem>
-          <Left>
-            <Thumbnail source={{ uri: sourceDetail.icon }} />
-            <Body>
-              <Text>{sourceDetail.name}</Text>
-              <Text note>{moment(data.item.publishedAt).fromNow()}</Text>
-            </Body>
-          </Left>
-        </CardItem>
-        <CardItem cardBody>
-          <Image
-            source={{ uri: data.item.urlToImage }}
-            style={{ height: 200, width: null, flex: 1 }}
-          />
-        </CardItem>
-        <CardItem>
-          <Text>{data.item.description}</Text>
-        </CardItem>
-      </Card>
+      <TouchableOpacity
+        onPress={() => this.props.history.push("/article?url=" + data.item.url)}
+      >
+        <Card>
+          <CardItem>
+            <Left>
+              <Thumbnail source={{ uri: sourceDetail.icon }} />
+              <Body>
+                <Text>{sourceDetail.name}</Text>
+                <Text note>{moment(data.item.publishedAt).fromNow()}</Text>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <Image
+              source={{ uri: data.item.urlToImage }}
+              style={{ height: 200, width: null, flex: 1 }}
+            />
+          </CardItem>
+          <CardItem>
+            <Text>{data.item.description}</Text>
+          </CardItem>
+        </Card>
+      </TouchableOpacity>
     );
   };
 
@@ -119,4 +124,4 @@ export default connect(
         });
     }
   })
-)(SourceDetail);
+)(withRouter(SourceDetail));
