@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Fox Sports",
+    "category": "sport",
+    "source": "fox-sports",
+    "icon": "http://global.fncstatic.com/static/orion/styles/img/fox-news/favicons/apple-touch-icon-120x120.png"
+  },
+  {
+    "name": "ESPN",
+    "category": "sport",
+    "source": "espn",
+    "icon": "http://a.espncdn.com/wireless/mw5/r1/images/bookmark-icons-v2/espn-icon-120x120.png"
+  },
+  {
+    "name": "Talk Sport",
+    "category": "sport",
+    "source": "talksport",
+    "icon": "https://talksport.com/wp-content/uploads/sites/5/2018/06/cropped-App-Icon2.png?strip=all&w=180"
+  },
+
+  {
+    "name": "Business Insider",
+    "category": "business",
+    "source": "business-insider",
+    "icon": "https://static4.businessinsider.com/assets/images/us/favicons/apple-touch-icon.png?v=BI-US-2017-06-22"
+  },
+  {
+    "name": "Bloomberg",
+    "category": "business",
+    "source": "bloomberg",
+    "icon": "https://s3.amazonaws.com/itunes-images/app-assets/281941097/96949248/281941097-96949248-circularArtwork-300.jpg"
+  },
+  {
+    "name": "Financial Times",
+    "category": "business",
+    "source": "financial-times",
+    "icon": "https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=180&height=180&format=png"
+  },
+
+  {
+    "name": "TechCrunch",
+    "category": "technology",
+    "source": "techcrunch",
+    "icon": "https://cdn.techcrunch.cn/wp-content/themes/vip/techcrunch-cn-2014/assets/images/homescreen_TCIcon_ipad_2x.png"
+  },
+  {
+    "name": "The Verge",
+    "category": "technology",
+    "source": "the-verge",
+    "icon": "https://cdn.vox-cdn.com/uploads/chorus_asset/file/7395359/ios-icon.0.png"
+  },
+  {
+    "name": "Mashable",
+    "category": "technology",
+    "source": "mashable",
+    "icon": "https://mashable.com/apple-touch-icon-120x120.png?v=m2Pmw8zNwl"
+  }
+]
