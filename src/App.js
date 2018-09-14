@@ -1,7 +1,6 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
+import { NativeRouter, Route } from "react-router-native";
 import { Provider } from "react-redux";
-
-import store from "./store";
 import {
   Container,
   Header,
@@ -10,22 +9,25 @@ import {
   Button,
   Icon,
   Right,
-  Content
+  Content,
+  View
 } from "native-base";
-import SourceList from "./components/SourceList";
-import AppHeader from "./components/AppHeader";
 
-export default class App extends React.Component {
+import store from "./store";
+import HomePage from "./pages/HomePage";
+import SourceDetail from "./pages/SourceDetail";
+
+export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Container>
-          <AppHeader />
-          <Content>
-            <SourceList />
-          </Content>
-        </Container>
-      </Provider>
+      <NativeRouter>
+        <Provider store={store}>
+          <Fragment>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/source/:id" component={SourceDetail} />
+          </Fragment>
+        </Provider>
+      </NativeRouter>
     );
   }
 }

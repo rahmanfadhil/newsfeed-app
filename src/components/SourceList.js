@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-native";
 import { connect } from "react-redux";
 import {
   List,
@@ -14,7 +15,11 @@ import {
 class SourceList extends Component {
   _renderListItem = (item, i) => {
     return (
-      <ListItem key={i} thumbnail>
+      <ListItem
+        key={i}
+        thumbnail
+        onPress={() => this.props.history.push("/source/" + i)}
+      >
         <Left>
           <Thumbnail square source={{ uri: item.icon }} />
         </Left>
@@ -28,7 +33,6 @@ class SourceList extends Component {
     );
   };
   render() {
-    console.log(this.props.sources);
     return (
       <List>
         <ListItem itemDivider>
@@ -66,4 +70,4 @@ class SourceList extends Component {
   }
 }
 
-export default connect(({ sources }) => ({ sources }))(SourceList);
+export default connect(({ sources }) => ({ sources }))(withRouter(SourceList));

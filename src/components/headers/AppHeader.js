@@ -11,7 +11,7 @@ import {
   Text
 } from "native-base";
 import { connect } from "react-redux";
-import { SET_SEARCH } from "../types";
+import { SET_SEARCH } from "../../types";
 
 class AppHeader extends Component {
   state = {
