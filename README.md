@@ -8,3 +8,7 @@ Techlologies:
 - React Router Native
 - Native Base
 - Moment.js
+
+Note:
+
+- You can download the app-release.apk and install to your phone
