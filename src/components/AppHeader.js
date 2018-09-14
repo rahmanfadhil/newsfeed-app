@@ -10,14 +10,22 @@ import {
   Input,
   Text
 } from "native-base";
+import { connect } from "react-redux";
+import { SET_SEARCH } from "../types";
 
 class AppHeader extends Component {
   state = {
-    search_bar: false
+    search_bar: false,
+    search_input: ""
   };
 
   _toggleHeader = () => {
     this.setState(prev => ({ search_bar: !prev.search_bar }));
+  };
+
+  _onSearchChange = value => {
+    this.setState({ search_input: value });
+    this.props.setSearch(value);
   };
 
   render() {
@@ -25,7 +33,7 @@ class AppHeader extends Component {
       <Header searchBar rounded>
         <Item>
           <Icon name="ios-search" />
-          <Input placeholder="Search" />
+          <Input placeholder="Search" onChangeText={this._onSearchChange} />
           <Icon name="close" onPress={this._toggleHeader} />
         </Item>
         <Button transparent>
@@ -49,4 +57,9 @@ class AppHeader extends Component {
   }
 }
 
-export default AppHeader;
+export default connect(
+  null,
+  dispatch => ({
+    setSearch: text => dispatch({ type: SET_SEARCH, payload: text })
+  })
+)(AppHeader);
