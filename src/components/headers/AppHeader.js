@@ -20,7 +20,7 @@ class AppHeader extends Component {
   };
 
   _toggleHeader = () => {
-    this.setState(prev => ({ search_bar: !prev.search_bar }));
+    this.setState(prev => ({ search_bar: !prev.search_bar, search_input: "" }));
   };
 
   _onSearchChange = value => {
