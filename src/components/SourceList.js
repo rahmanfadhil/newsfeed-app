@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-native";
+import { TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import {
   List,
@@ -15,21 +16,23 @@ import {
 class SourceList extends Component {
   _renderListItem = (item, i) => {
     return (
-      <ListItem
-        key={i}
-        thumbnail
-        onPress={() => this.props.history.push("/source/" + i)}
-      >
-        <Left>
-          <Thumbnail square source={{ uri: item.icon }} />
-        </Left>
-        <Body>
-          <Text>{item.name}</Text>
-        </Body>
-        <Right>
-          <Icon name="arrow-forward" />
-        </Right>
-      </ListItem>
+      <TouchableOpacity>
+        <ListItem
+          key={i}
+          thumbnail
+          onPress={() => this.props.history.push("/source/" + i)}
+        >
+          <Left>
+            <Thumbnail square source={{ uri: item.icon }} />
+          </Left>
+          <Body>
+            <Text>{item.name}</Text>
+          </Body>
+          <Right>
+            <Icon name="arrow-forward" />
+          </Right>
+        </ListItem>
+      </TouchableOpacity>
     );
   };
   render() {
